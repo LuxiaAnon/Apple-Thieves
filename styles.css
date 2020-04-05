@@ -1,6 +1,41 @@
-.background {
-    background-image: url("./Dessins\ jeu/décors2.png");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box ;
+};
+
+.background-home{
+    background-image: url("./Illustrations/home_screen2.png");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
+};
 
-}
+.start-button{
+    background-color: #FCCE14;
+    border: 6px solid rgb(201, 86, 44);
+    font-size: 2.5em;
+    font-family: 'Pacifico';
+    padding: 5px 10px;
+    right: 16%;
+    margin-left: 62%;
+    margin-top: 38%;
+    cursor: pointer;
+    
+};
+
+.background-game {
+    background-image: url("./Illustrations/décors2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+};
+
+#score{
+
+};
+
+#time{
+
+};
