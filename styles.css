@@ -6,6 +6,10 @@
     box-sizing: border-box ;
 };
 
+.body{
+    height: 100vh;
+}
+
 .background-home{
     background-image: url("./Illustrations/home_screen2.png");
     background-repeat: no-repeat;
@@ -27,7 +31,7 @@
 };
 
 .background-game {
-    background-image: url("./Illustrations/décors2.png");
+    background-image: url("./Illustrations/decors2.png");
     background-repeat: no-repeat;
     background-size: cover;
 };

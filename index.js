@@ -13,7 +13,7 @@ function play(){
 
 //let's awake the start button
 
-const startButton = document.getElementsByClassName("start-button");
+const startButton = document.querySelector(".start-button");
 console.log(startButton)
 startButton.addEventListener('click',play)
     
