@@ -5,6 +5,7 @@ const score = document.getElementById('score');
 const time = document.getElementById('time');
 const background = document.getElementById("background");
 let character = document.getElementById("character")
+let characterPosition = {x:0}
 const homeScreen = document.getElementById("home-screen")
 const gameScreen = document.getElementById("game-screen")
 const appleOne = document.querySelector(".apple.one");
@@ -49,16 +50,15 @@ function movingCharacter (){
 
     if (e.code==="ArrowRight") {
         console.log("I am moving right")
-        character.x = character.x + 5;
+        characterPosition.x = characterPosition.x + 20;
       } else if (e.code==="ArrowLeft") {
         console.log("I am moving left")
-        character.x = character.x - 5;
+        characterPosition.x = characterPosition.x - 20;
       }
     }
-
     setInterval(()=>{
-        character.style.transform=`translateX(${character.x}px)`
-    },10
+        character.style.transform=`translateX(${characterPosition.x}px)`
+    },5
     )
 }
 
@@ -84,7 +84,7 @@ if (player.x < object.x + object.width &&
      console.log("Colisiooooon")
  }
 }
-
+// peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 
 
 
