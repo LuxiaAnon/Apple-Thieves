@@ -4,7 +4,7 @@ const theGame = new TheGame();
 const score = document.getElementById('score');
 const time = document.getElementById('time');
 const background = document.getElementById("background");
-const character = document.getElementById("character")
+let character = document.getElementById("character")
 const homeScreen = document.getElementById("home-screen")
 const gameScreen = document.getElementById("game-screen")
 const appleOne = document.querySelector(".apple.one");
@@ -13,13 +13,15 @@ const appleThree = document.querySelector(".apple.three");
 const appleFour = document.querySelector(".apple.four");
 const apples = document.querySelectorAll(".apple");
 
+
 function play(){
     background.classList.remove("background-home");
     background.classList.add("background-game");
     homeScreen.style.visibility="hidden";
     gameScreen.style.visibility="visible";
     score.innerText=theGame.score;
-    printTime();    
+    printTime(); 
+    gameLoop ();   
 }
 
 function printTime(){
@@ -34,15 +36,55 @@ startButton.addEventListener('click', ()=>{
     theGame.startGame(printTime)
 })
 
+//looping the game !
+
+function gameLoop (){
+    movingCharacter () ;
+  
+}
+
 //moving the character
+function movingCharacter (){
+    window.onkeydown =function(e){
+
+    if (e.code==="ArrowRight") {
+        console.log("I am moving right")
+        character.x = character.x + 5;
+      } else if (e.code==="ArrowLeft") {
+        console.log("I am moving left")
+        character.x = character.x - 5;
+      }
+    }
+
+    setInterval(()=>{
+        character.style.transform=`translateX(${character.x}px)`
+    },10
+    )
+}
+
+//apples fall
+
+// function apples_fall(apple){
+//     apple_curre
+// }
 
 //collision detection 
 
 
-// const keyState={};
-// let cancel=null;
 
-// cancel
+function collisionDetection (player, object){
+
+player = player.getBoundingClientRect()
+object = object.getBoundingClientRect()
+
+if (player.x < object.x + object.width &&
+    player.x + player.width > object.x &&
+    player.y < object.y + object.height &&
+    player.y + player.height > object.y) {
+     console.log("Colisiooooon")
+ }
+}
+
 
 
 

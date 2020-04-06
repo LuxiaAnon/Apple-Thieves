@@ -68,7 +68,8 @@ h1{
     left: 0;
     height: 200px;
     width: 200px;
-        }
+    transform: translateX();
+}
 
 #game_info{
  font-size:4rem;
