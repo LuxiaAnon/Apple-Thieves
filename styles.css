@@ -4,32 +4,33 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box ;
-}
+    }
 
 body{
     height: 100vh;
     position: relative;
-}
+    }
 
 html {
     font-size: 16px;
-}
+    }  
 
 h1{
     font-size: 7rem;
     font-family: 'Pacifico';
-    color:darkred; 
-    margin-top: 35%;
-    margin-left: 8%;
+    color:darkred;
+    bottom:5%;
+    left: 5%;
     position: absolute;
-}
+    }
 
 .background-home{
     background-image: url("./Illustrations/home_screen2.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
-}
+    }
+
 
 .start-button{
     background-color: #FCCE14;
@@ -37,46 +38,113 @@ h1{
     font-size: 2.5rem;
     font-family: 'Pacifico';
     padding: 5px 10px;
-    margin-left: 62%;
-    margin-top: 39%;
-    cursor: pointer;  
+    bottom: 8%;
+    left: 62%;
+    cursor: pointer;
     position: absolute;
-
-}
+    }
 
 .background-game {
     background-image: url("./Illustrations/decors2.png");
     background-repeat: no-repeat;
     background-size: cover;
-}
+    }
 
 #home-screen{
     visibility: visible;
-}
+    }
 
 #game-screen{
     visibility: hidden;
-}
+    }
 
-#character{
-  position: absolute;
-  margin-top: 25%; 
-  height: 100px;
-}
+ #character{
+    position: absolute;
+    background-image: url(./Illustrations/bras_panier.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+        }
 
 #game_info{
- display: flex; 
- justify-content: space-evenly;
- font-size: 5em;
- font-family: 'Pacifico';
+ font-size:4rem;
+ font-family:'Pacifico';
+ position : absolute;
+ top: 65%;
+ right: 10%;
+ background-color:plum;
+ border-radius: 10%;
+ width: 400px;
+ padding:0 30px;
+    }
+
+.apple{
+    height: 13vh;
+    max-height: max-content;
 }
 
-#score{
-   
+
+
+.apple.one{
+    background-image: url(./Illustrations/pomme.png);
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top : 5%;
+    left: 15%;
 }
+
+.apple.two{
+    background-image: url(./Illustrations/pomme.png);
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top : 20%;
+    left: 30%;
+ 
+}
+.apple.three{
+    background-image: url(./Illustrations/pomme.png);
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top : 6%;
+    left: 50%; 
+}
+.apple.four{
+    background-image: url(./Illustrations/pomme.png);
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top : 7%;
+    left: 75%;
+}
+.score{
+    height: 8vh;  
+}
+
+/* #score{
+   
+} */
 
 #time{
-    
+margin-left: 20px;   
 }
 
 

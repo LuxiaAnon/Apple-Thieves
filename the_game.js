@@ -6,13 +6,16 @@ class TheGame {
     this.onPlay = false
     }
 
-    startGame(){
-        this.intervalID = setInterval (()=>{
-            this.timeLeft--;
-        },1000
-        )
-        this.onPlay=true
-        if(this.timeLeft=0){
+    startGame(callback){
+        this.intervalID = setInterval(()=>{
+            this.timeLeft-=1;
+            if (callback){
+                callback()
+            }
+            },1000
+            )
+        this.onPlay=true;
+        if(this.timeLeft===0){
             finishGame()
         }
     }
@@ -26,6 +29,7 @@ class TheGame {
     }
 
     finishGame(){
+       this.onPlay=false
         
     }
 

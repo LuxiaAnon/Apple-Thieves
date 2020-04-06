@@ -7,20 +7,44 @@ const background = document.getElementById("background");
 const character = document.getElementById("character")
 const homeScreen = document.getElementById("home-screen")
 const gameScreen = document.getElementById("game-screen")
+const appleOne = document.querySelector(".apple.one");
+const appleTwo = document.querySelector(".apple.two");
+const appleThree = document.querySelector(".apple.three");
+const appleFour = document.querySelector(".apple.four");
+const apples = document.querySelectorAll(".apple");
 
 function play(){
-    theGame.startGame();
     background.classList.remove("background-home");
     background.classList.add("background-game");
-    console.log(homeScreen)
     homeScreen.style.visibility="hidden";
     gameScreen.style.visibility="visible";
     score.innerText=theGame.score;
-    time.innerText=theGame.timeLeft+" sec";    
+    printTime();    
+}
+
+function printTime(){
+    time.innerText=`${theGame.timeLeft} sec`
 }
 
 //let's awake the start button
 
 const startButton = document.querySelector(".start-button");
-startButton.addEventListener('click',play)
+startButton.addEventListener('click', ()=>{
+    play()
+    theGame.startGame(printTime)
+})
+
+//moving the character
+
+//collision detection 
+
+
+// const keyState={};
+// let cancel=null;
+
+// cancel
+
+
+
+
     
