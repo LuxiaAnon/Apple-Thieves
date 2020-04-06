@@ -4,10 +4,24 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box ;
-};
+}
 
-.body{
+body{
     height: 100vh;
+    position: relative;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1{
+    font-size: 7rem;
+    font-family: 'Pacifico';
+    color:darkred; 
+    margin-top: 35%;
+    margin-left: 8%;
+    position: absolute;
 }
 
 .background-home{
@@ -15,31 +29,54 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
-};
+}
 
 .start-button{
     background-color: #FCCE14;
     border: 6px solid rgb(201, 86, 44);
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-family: 'Pacifico';
     padding: 5px 10px;
-    right: 16%;
     margin-left: 62%;
-    margin-top: 38%;
-    cursor: pointer;
-    
-};
+    margin-top: 39%;
+    cursor: pointer;  
+    position: absolute;
+
+}
 
 .background-game {
     background-image: url("./Illustrations/decors2.png");
     background-repeat: no-repeat;
     background-size: cover;
-};
+}
+
+#home-screen{
+    visibility: visible;
+}
+
+#game-screen{
+    visibility: hidden;
+}
+
+#character{
+  position: absolute;
+  margin-top: 25%; 
+  height: 100px;
+}
+
+#game_info{
+ display: flex; 
+ justify-content: space-evenly;
+ font-size: 5em;
+ font-family: 'Pacifico';
+}
 
 #score{
-
-};
+   
+}
 
 #time{
+    
+}
 
-};
+
