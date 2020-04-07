@@ -1,6 +1,6 @@
 class TheGame {
     constructor (){
-    this.score = 0 
+    this.score = 0
     this.timeLeft = 60
     this.intervalID = 0 
     this.onPlay = false
@@ -8,16 +8,16 @@ class TheGame {
 
     startGame(callback){
         this.intervalID = setInterval(()=>{
+            if(this.timeLeft>=1){
             this.timeLeft-=1;
+            } else{
+                clearInterval(this.intervalID)
+            }
             if (callback){
                 callback()
             }
             },1000
             )
-        this.onPlay=true;
-        if(this.timeLeft===0){
-            finishGame()
-        }
     }
 
     addPoint(){
@@ -27,10 +27,4 @@ class TheGame {
     removePoint(){
         this.score = this.score-3
     }
-
-    finishGame(){
-       this.onPlay=false
-        
-    }
-
 }

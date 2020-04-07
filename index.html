@@ -10,24 +10,46 @@
 <body id="background" class="background-home"> 
      <!-- start button and title when not onplay -->
     <section id="home-screen">
-        <h1>Apple Thieves</h1>
+        <h1 id="title">Apple Thieves</h1>
         <div id="button">
             <button class="start-button">Let's steal apples!</button>
+        </div>
+        <div id="intromusic"> 
+        <audio controls autoplay style="display: none">
+        <source src="./audios/title-screen.mp3" type="audio/mpeg" >
+        </audio>
         </div>
     </section>
     <!-- score and time when onplay -->
     <section id="game-screen">
-        
-        <div id="Apples">
+        <div id="verts">
+            <div class ="vert one"></div>
+            <div class ="vert two"></div>
+            <div class ="vert three"></div>
+            <div class ="vert four"></div>
+        </div>
+        <div id="bunnies">
+            <div class ="bunny one"></div>
+            <div class ="bunny two"></div>
+            <div class ="bunny three"></div>
+            <div class ="bunny four"></div>
+        </div>
+        <div id="apples">
             <div class ="apple one"></div>
             <div class ="apple two"></div>
             <div class ="apple three"></div>
             <div class ="apple four"></div>
         </div>
         <div id="game_info">
-            <span id="time"></span>  <span id="score"></span> <img class ="score" src="./Illustrations/pomme.png" alt="apple">
+            <span id="time"></span>   <img class ="score" src="./Illustrations/pomme.png" alt="apple"> <span id="score"></span>
         </div>
         <div id="character"></div>
+    </section>
+    <section id="score-screen">
+        <div>
+            <h1>Congratulations</h1>
+            <h2></h2>
+        </div>
     </section>
     
 <scrip src="./collision_detection.js"></script> 

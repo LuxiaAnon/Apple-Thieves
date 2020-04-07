@@ -15,7 +15,7 @@ html {
     font-size: 16px;
     }  
 
-h1{
+#title{
     font-size: 7rem;
     font-family: 'Pacifico';
     color:darkred;
@@ -31,21 +31,14 @@ h1{
     z-index: 0;
     }
 
-
-.start-button{
-    background-color: #FCCE14;
-    border: 6px solid rgb(201, 86, 44);
-    font-size: 2.5rem;
-    font-family: 'Pacifico';
-    padding: 5px 10px;
-    bottom: 8%;
-    left: 62%;
-    cursor: pointer;
-    position: absolute;
-    }
-
 .background-game {
     background-image: url("./Illustrations/decors2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.background-score {
+    background-image: url("./Illustrations/score_screen.png");
     background-repeat: no-repeat;
     background-size: cover;
     }
@@ -54,9 +47,32 @@ h1{
     visibility: visible;
     }
 
+
+
 #game-screen{
     visibility: hidden;
     }
+
+#score-screen{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    }
+
+#score-screen h1{
+    font-size: 7rem;
+    font-family: 'Pacifico';
+    color:darkred;
+   font-size: 5em;
+   ;
+}
+
+#score-screen h2{
+  
+    font-size: 4em;
+    font-family: 'Pacifico';
+    
+ }
 
  #character{
     position: absolute;
@@ -71,6 +87,19 @@ h1{
     transform: translateX();
 }
 
+.start-button{
+    background-color: #FCCE14;
+    border: 6px solid rgb(201, 86, 44);
+    font-size: 2.5rem;
+    font-family: 'Pacifico';
+    padding: 5px 10px;
+    bottom: 8%;
+    left: 62%;
+    cursor: pointer;
+    position: absolute;
+    }
+
+
 #game_info{
  font-size:4rem;
  font-family:'Pacifico';
@@ -83,12 +112,84 @@ h1{
  padding:0 30px;
     }
 
+
+
+.vert{
+    background-image: url(./Illustrations/vert.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    position: absolute;  
+    width: 150px;
+    height: 200px;
+    z-index: 3;
+}
+
+.vert.one{
+    left: 15%;
+}
+.vert.two{
+    left: 30%;
+}
+.vert.three{
+    left: 50%;
+}
+.vert.four{
+    left: 70%;
+}
+
+.bunny{
+    background-position: center;
+    position: absolute;  
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+    transform: translateY();
+}
+
+.bunny.one{
+    background-image: url(./Illustrations/lapin_brun_tombe.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 135px;
+    height: 194px;
+    left: 15%;   
+}
+.bunny.two{
+    background-image: url(./Illustrations/lapin_gris_tombe.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 135px;
+    height: 194px;
+    left: 30%; 
+}
+.bunny.three{
+    background-image: url(./Illustrations/lapin_brun_tombe.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 135px;
+    height: 194px;
+    left: 50%; 
+}
+.bunny.four{
+    background-image: url(./Illustrations/lapin_gris_tombe.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 135px;
+    height: 194px;
+    left: 70%; 
+}
+
 .apple{
     height: 13vh;
     max-height: max-content;
+    transform: translateY();
+    z-index: 10;
 }
-
-
 
 .apple.one{
     background-image: url(./Illustrations/pomme.png);
