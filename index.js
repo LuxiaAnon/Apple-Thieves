@@ -17,8 +17,6 @@ const appleOne = document.querySelector(".apple.one");
 const apples = document.querySelectorAll(".apple");
 const bunnies = document.querySelectorAll(".bunny");
 
-console.log(appleOne)
-console.log(appleOne.getBoundingClientRect())
 
 function play(){
     background.classList.remove("background-home");
@@ -34,8 +32,6 @@ function play(){
     bunniesAttacking()
 }
 
-if (parseFloat(time.innerText)<1){
-        finishGame()}
 
 function printTime(){
     time.innerText=`${theGame.timeLeft} sec`
@@ -74,24 +70,16 @@ function movingCharacter (){
 // apples fall
 
 function appleFalling (apple){
-    console.log(apple)
     let appleRect = apple.getBoundingClientRect();
-    appleRect.y = appleRect.y - 10;
-    if (appleRect.y < 700) {
+    let screenLimit = document.body.getBoundingClientRect()
+    appleRect.y = appleRect.y + 10;
+    if (appleRect.y < (screenLimit.height-150)) {
         apple.style.transform=`translateY(${appleRect.y}px)`;  
     } else {
-        apple.style.transform = "translateY(30px)"
+        apple.style.transform = "translateY(10px)"
     }
-    
     collisionDetection(apple)
 };
-
-
-// setTimeout(function(){
-//     if (parseFloat(time.innerText)>55){
-//       window.requestAnimationFrame(appleFalling);  
-//     }
-//    },75) 
 
 function applesFalling (){
     for (let i = 0; i< apples.length; i++ ){
@@ -99,31 +87,31 @@ function applesFalling (){
     }
     setTimeout(function() {
         window.requestAnimationFrame(applesFalling)
-    },500)
+    },100)
 }
  
 //bunnies attacking
 
 function bunnyAttacking (bunny){
-    console.log(bunny)
     let bunnyRect = bunny.getBoundingClientRect();
-    bunnyRect.y = bunnyRect.y - 1;
+    let screenLimit = document.body.getBoundingClientRect()
+    bunnyRect.y = bunnyRect.y + 20;
+    if (bunnyRect.y < (screenLimit.height-195)){
     bunny.style.transform=`translateY(${bunnyRect.y}px)`;
-    collisionDetection(bunny)
+} else{
+    bunny.style.transform = "translateY(10px)"
+}
 
-
-    setTimeout(function(){
-    if (parseFloat(time.innerText)>55){
-      window.requestAnimationFrame(bunnyAttacking);  
-    }
-   },75) 
+     collisionDetection(bunny)
 };
 
 function bunniesAttacking (){
     for (let i = 0; i< bunnies.length; i++ ){
     bunnyAttacking(bunnies[i])
     }
-    window.requestAnimationFrame(bunnyAttacking)
+    setTimeout(function() {
+        window.requestAnimationFrame(bunniesAttacking)
+    },100)
 }
 
 //collision detection 
@@ -141,8 +129,9 @@ if (characterRect.x < objectRect.x + objectRect.width &&
          theGame.addPoint()
      }else{
          theGame.removePoint()
+     
      }
- }
+ } printScore()
 }
 // peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 

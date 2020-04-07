@@ -35,12 +35,14 @@ html {
     background-image: url("./Illustrations/decors2.png");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
     }
 
 .background-score {
     background-image: url("./Illustrations/score_screen.png");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 0;
     }
 
 #home-screen{
@@ -108,7 +110,7 @@ html {
  right: 10%;
  background-color:plum;
  border-radius: 10%;
- width: 400px;
+ width: 30%;
  padding:0 30px;
     }
 
@@ -145,6 +147,7 @@ html {
     height: 120px;
     z-index: 2;
     transform: translateY();
+    z-index: 2;
 }
 
 .bunny.one{
@@ -154,7 +157,8 @@ html {
     background-size: cover;
     width: 135px;
     height: 194px;
-    left: 15%;   
+    left: 25%; 
+    top: 0%;  
 }
 .bunny.two{
     background-image: url(./Illustrations/lapin_gris_tombe.png);
@@ -181,7 +185,7 @@ html {
     background-size: cover;
     width: 135px;
     height: 194px;
-    left: 70%; 
+    left: 60%; 
 }
 
 .apple{
@@ -199,7 +203,7 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 5%;
+    top : 10%;
     left: 15%;
 }
 
@@ -211,7 +215,7 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 20%;
+    top : 2%;
     left: 30%;
  
 }
@@ -223,7 +227,7 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 6%;
+    top : 4%;
     left: 50%; 
 }
 .apple.four{
@@ -234,7 +238,7 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 7%;
+    top : 1%;
     left: 75%;
 }
 .score{
