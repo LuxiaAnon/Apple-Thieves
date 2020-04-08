@@ -63,8 +63,11 @@ restartButton.addEventListener('click', ()=>{
 function movingCharacter (){
     window.onkeydown =function(e){
     if (e.code==="ArrowRight") {
+        if (characterPosition.x<(screenLimitWidth-100)){
         characterPosition.x = characterPosition.x + 25;
+        }
       } else if (e.code==="ArrowLeft") {
+        if (characterPosition.x>0){
         characterPosition.x = characterPosition.x - 25;
       }
     }
@@ -73,7 +76,7 @@ function movingCharacter (){
     },5
     )
 }
-
+}
 // apples fall
 
 function appleFalling (apple){
