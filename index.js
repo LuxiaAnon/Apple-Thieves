@@ -2,6 +2,7 @@ const theGame = new TheGame();
 
 //get the elements to display
 const introMusic = document.querySelector("#intromusic")
+const gameMusic = document.querySelector('#game-music')
 const score = document.getElementById('score');
 const time = document.getElementById('time');
 const background = document.getElementById("background");
@@ -27,6 +28,9 @@ function play(){
     scoreScreen.style.visibility="hidden"; 
     score.innerText=theGame.score;
     introMusic.innerHTML=" "
+    gameMusic.innerHTML=`<audio controls autoplay loop style="display: none">
+    <source src="./audios/main-theme.mp3" type="audio/mpeg" >
+    </audio>`;
     printTime(); 
     movingCharacter();    
     applesFalling();
@@ -73,7 +77,7 @@ function movingCharacter (){
     }
     setInterval(()=>{
         character.style.transform=`translateX(${characterPosition.x}px)`
-    },5
+    },1
     )
 }
 }
@@ -163,7 +167,8 @@ function finishGame(){
     scoreScreen.style.visibility="visible"; 
     introMusic.innerHTML= `<audio controls autoplay style="display: none">
     <source src="./audios/title-screen.mp3" type="audio/mpeg" >
-    </audio>`
+    </audio>`;
+    gameMusic.innerHTML=" ";
     if(theGame.score>10){
     document.querySelector('#finish').innerHTML=`<h1>Congratulations!</h1><h2>You stole ${theGame.score} apples</h2>`;
     background.classList.add("background-score");
