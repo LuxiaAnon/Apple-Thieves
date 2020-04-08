@@ -1,3 +1,4 @@
+
 const theGame = new TheGame();
 
 //get the elements to display
@@ -24,6 +25,7 @@ function play(){
     background.classList.remove("background-score");
     background.classList.remove("background-score2");
     background.classList.remove("background-score3");
+    background.classList.remove("background-score4");
     background.classList.add("background-game");
     homeScreen.style.visibility="hidden";
     gameScreen.style.visibility="visible";
@@ -65,7 +67,7 @@ restartButton.addEventListener('click', ()=>{
 })
 
 
-//moving the character
+// moving the character
 function movingCharacter (){
     window.onkeydown =function(e){
     if (e.code==="ArrowRight") {
@@ -83,6 +85,9 @@ function movingCharacter (){
     )
 }
 }
+
+
+
 // apples fall
 
 function appleFalling (apple){
@@ -171,12 +176,15 @@ function finishGame(){
     <source src="./audios/title-screen.mp3" type="audio/mpeg" >
     </audio>`;
     gameMusic.innerHTML=" ";
-    if(theGame.score>10){
+    if(theGame.score>10 && theGame.score<=49){
     document.querySelector('#finish').innerHTML=`<h1>Congratulations!</h1><h2>You stole ${theGame.score} apples</h2>`;
     background.classList.add("background-score");
     } else if (theGame.score<=9 && theGame.score>=1){
     document.querySelector('#finish').innerHTML=`<h1>Not that bad!</h1><h2>You stole ${theGame.score} apples</h2>`;
     background.classList.add("background-score2");  
+    }else if (theGame.score>=50){
+    document.querySelector('#finish').innerHTML=`<h1>You were in fire!</h1><h2>You stole ${theGame.score} apples!</h2>`;
+    background.classList.add("background-score4");  
     }else{
     document.querySelector('#finish').innerHTML=`<h1>This is embarassing...</h1><h2>The bunnies were better than you!</h2>`;
     background.classList.add("background-score3");   

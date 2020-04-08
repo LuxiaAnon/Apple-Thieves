@@ -60,6 +60,12 @@ html {
     z-index: 0;
     }
 
+     .background-score4{
+    background-image: url("./Illustrations/score_screen4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    }
 
 
 #home-screen{
