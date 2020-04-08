@@ -78,15 +78,16 @@ html {
 
  #character{
     position: absolute;
-    background-image: url(./Illustrations/bras_panier.png) ;
+    background-image: url(./Illustrations/bras_panier2.png) ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     bottom: 0;
     left: 0;
-    height: 200px;
+    height: 150px;
     width: 200px;
     transform: translateX();
+    z-index: 10;
 }
 
 .start-button{
@@ -113,33 +114,7 @@ html {
  width: 30%;
  padding:0 30px;
     }
-
-
-
-.vert{
-    background-image: url(./Illustrations/vert.png);
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
-    position: absolute;  
-    width: 150px;
-    height: 200px;
-    z-index: 3;
-}
-
-.vert.one{
-    left: 15%;
-}
-.vert.two{
-    left: 30%;
-}
-.vert.three{
-    left: 50%;
-}
-.vert.four{
-    left: 70%;
-}
-
+    
 .bunny{
     background-position: center;
     position: absolute;  
@@ -147,7 +122,7 @@ html {
     height: 120px;
     z-index: 2;
     transform: translateY();
-    z-index: 2;
+    /* transform: translateX(); */
 }
 
 .bunny.one{
@@ -185,6 +160,7 @@ html {
     background-size: cover;
     width: 135px;
     height: 194px;
+    
     left: 60%; 
 }
 
@@ -192,18 +168,18 @@ html {
     height: 13vh;
     max-height: max-content;
     transform: translateY();
+    /* transform: translateX(); */
     z-index: 10;
 }
 
 .apple.one{
     background-image: url(./Illustrations/pomme.png);
     background-repeat: no-repeat;
-    background-size: 5em;
     background-position: center;
+    background-size: 5em;
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 10%;
     left: 15%;
 }
 
@@ -215,7 +191,6 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 2%;
     left: 30%;
  
 }
@@ -227,7 +202,6 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 4%;
     left: 50%; 
 }
 .apple.four{
@@ -238,7 +212,7 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-    top : 1%;
+
     left: 75%;
 }
 .score{
