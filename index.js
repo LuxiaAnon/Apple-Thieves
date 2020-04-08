@@ -105,7 +105,7 @@ function applesFalling (){
 function bunnyAttacking (bunny){
     let bunnyRect = bunny.getBoundingClientRect();
     let screenLimit = document.body.getBoundingClientRect();
-    bunnyRect.y = bunnyRect.y + 2;
+    bunnyRect.y = bunnyRect.y + 3;
     if (bunnyRect.y < (screenLimit.height-195)){
     bunny.style.transform=`translateY(${bunnyRect.y}px)`;
 } else{
