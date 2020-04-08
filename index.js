@@ -16,9 +16,13 @@ const bunnies = document.querySelectorAll(".bunny");
 
 function play(){
     background.classList.remove("background-home");
+    background.classList.remove("background-score");
+    background.classList.remove("background-score2");
+    background.classList.remove("background-score3");
     background.classList.add("background-game");
     homeScreen.style.visibility="hidden";
     gameScreen.style.visibility="visible";
+    scoreScreen.style.visibility="hidden"; 
     score.innerText=theGame.score;
     introMusic.innerHTML=" "
     printTime(); 
@@ -45,14 +49,21 @@ startButton.addEventListener('click', ()=>{
     setTimeout(finishGame,60000)
 })
 
+const restartButton = document.querySelector(".restart-button");
+restartButton.addEventListener('click', ()=>{
+    play()
+    theGame.startGame(printTime)
+    setTimeout(finishGame,60000)
+})
+
 
 //moving the character
 function movingCharacter (){
     window.onkeydown =function(e){
     if (e.code==="ArrowRight") {
-        characterPosition.x = characterPosition.x + 20;
+        characterPosition.x = characterPosition.x + 25;
       } else if (e.code==="ArrowLeft") {
-        characterPosition.x = characterPosition.x - 20;
+        characterPosition.x = characterPosition.x - 25;
       }
     }
     setInterval(()=>{
@@ -131,7 +142,8 @@ if (characterRect.x < objectRect.x + objectRect.width &&
 // peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 
 function finishGame(){
-    console.log("it is over")
+    // clearInterval(theGame.intervalID)
+    theGame.resetTime();
     background.classList.remove("background-game");
     background.classList.add("background-score");
     gameScreen.style.visibility="hidden";  
@@ -139,7 +151,17 @@ function finishGame(){
     introMusic.innerHTML= `<audio controls autoplay style="display: none">
     <source src="./audios/title-screen.mp3" type="audio/mpeg" >
     </audio>`
-    document.querySelector("h2").innerText=`You stole ${theGame.score} apples`;
+    if(theGame.score>10){
+    document.querySelector('#finish').innerHTML=`<h1>Congratulations!</h1><h2>You stole ${theGame.score} apples</h2>`;
+    background.classList.add("background-score");
+    } else if (theGame.score<=9 && theGame.score>=1){
+    document.querySelector('#finish').innerHTML=`<h1>Not that bad!</h1><h2>You stole ${theGame.score} apples</h2>`;
+    background.classList.add("background-score2");  
+    }else{
+    document.querySelector('#finish').innerHTML=`<h1>This is embarassing...</h1><h2>The bunnies were better than you!</h2>`;
+    background.classList.add("background-score3");   
+    document.querySelector(".restart-button").innerText="I am going back !"
+    }
  }   
 
 

@@ -45,6 +45,23 @@ html {
     z-index: 0;
     }
 
+    .background-score2 {
+    background-image: url("./Illustrations/score_screen2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    }
+
+
+     .background-score3 {
+    background-image: url("./Illustrations/score_screen3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    }
+
+
+
 #home-screen{
     visibility: visible;
     }
@@ -102,6 +119,18 @@ html {
     position: absolute;
     }
 
+.restart-button{
+    background-color: #FCCE14;
+    border: 6px solid rgb(201, 86, 44);
+    font-size: 2.5rem;
+    font-family: 'Pacifico';
+    padding: 5px 10px;
+    bottom: 45%;
+    left: 40%;
+    cursor: pointer;
+    position: absolute;
+    }
+
 
 #game_info{
  font-size:4rem;
@@ -109,7 +138,7 @@ html {
  position : absolute;
  top: 65%;
  right: 10%;
- background-color:plum;
+ background-color: pink;
  border-radius: 10%;
  width: 30%;
  padding:0 30px;
@@ -212,7 +241,6 @@ html {
     position: absolute;
     width: 90px;
     height: 90px;
-
     left: 75%;
 }
 .score{
@@ -227,4 +255,21 @@ html {
 margin-left: 20px;   
 }
 
+
+/* .bandit.one{
+    background-image: url(./Illustrations/lapin_brun_fuit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 170px;
+    height: 180px;
+    left: 25%;
+    top :73%;
+    animation: 3s linear 1s infinite running flee;
+}
+
+@keyframes flee {
+    from { left: 25%; }to   { left :80%); }
+  } */
 

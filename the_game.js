@@ -27,4 +27,9 @@ class TheGame {
     removePoint(){
         this.score = this.score-3
     }
+
+    resetTime(){
+        clearInterval(this.intervalID)
+        theGame.timeLeft=60
+    }
 }
