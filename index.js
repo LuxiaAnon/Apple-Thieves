@@ -14,7 +14,9 @@ const scoreScreen = document.getElementById("score-screen")
 const apples = document.querySelectorAll(".apple");
 const bunnies = document.querySelectorAll(".bunny");
 let screenLimit = document.body.getBoundingClientRect();
-let screenLimitWidth=screenLimit.width-150
+let screenLimitWidth=screenLimit.width-150;
+let req1;
+let req2;
 
 
 function play(){
@@ -101,7 +103,7 @@ function applesFalling (){
     for (let i = 0; i< apples.length; i++ ){
         appleFalling(apples[i])
     }
-        window.requestAnimationFrame(applesFalling)
+       req1= window.requestAnimationFrame(applesFalling)
 }
  
 //bunnies attacking
@@ -123,7 +125,7 @@ function bunniesAttacking (){
     for (let i = 0; i< bunnies.length; i++ ){
     bunnyAttacking(bunnies[i])
     }
-        window.requestAnimationFrame(bunniesAttacking)
+       req2= window.requestAnimationFrame(bunniesAttacking)
 }
 
 //collision detection 
@@ -158,8 +160,8 @@ if (characterRect.x < objectRect.x + objectRect.width &&
 // peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 
 function finishGame(){
-    window.cancelAnimationFrame(bunniesAttacking);
-    window.cancelAnimationFrame(applesFalling);
+    window.cancelAnimationFrame(req2);
+    window.cancelAnimationFrame(req1);
     theGame.resetTime();
     background.classList.remove("background-game");
     background.classList.add("background-score");
