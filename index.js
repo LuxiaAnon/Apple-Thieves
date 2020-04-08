@@ -131,11 +131,16 @@ if (characterRect.x < objectRect.x + objectRect.width &&
     characterRect.x + characterRect.width > objectRect.x &&
     characterRect.y < objectRect.y + objectRect.height &&
     characterRect.y + characterRect.height > objectRect.y) {
-     if(objectRect.width<100){
+     if(objectRect.width<91){
          theGame.addPoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
          object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
-     }else{
+     }else if(objectRect.width>91 && objectRect.width<100){
+        theGame.addFivePoints()
+        object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
+        object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
+     }
+     else{
          theGame.removePoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
          object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;

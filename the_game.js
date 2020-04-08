@@ -25,6 +25,10 @@ class TheGame {
         this.score++
     }
 
+    addFivePoints(){
+        this.score+=5
+    }
+
     removePoint(){
         this.score = this.score-3
     }

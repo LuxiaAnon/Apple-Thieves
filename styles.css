@@ -207,9 +207,11 @@ html {
     left: 80%;
 }
 .apple.golden{
-    left: 50%;
-    width: 91px;
-    height: 90px;
+    left: 40%;
+    width: 92px;
+    height: 92px;
+    background-image: url(./Illustrations/pomme_golden.png);
+
 }
 
 
