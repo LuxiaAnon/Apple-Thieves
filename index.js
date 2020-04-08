@@ -12,6 +12,8 @@ const gameScreen = document.getElementById("game-screen")
 const scoreScreen = document.getElementById("score-screen")
 const apples = document.querySelectorAll(".apple");
 const bunnies = document.querySelectorAll(".bunny");
+let screenLimit = document.body.getBoundingClientRect();
+let screenLimitWidth=screenLimit.width-150
 
 
 function play(){
@@ -76,16 +78,14 @@ function movingCharacter (){
 
 function appleFalling (apple){
     let appleRect = apple.getBoundingClientRect();
-    let screenLimit = document.body.getBoundingClientRect();
-    let screenLimitWidth=
     console.log("falling")
     // let screenLimitWidth = screenLimit.height
-    appleRect.y = appleRect.y + (makeRandomNumber(2,5));
+    appleRect.y = appleRect.y + 2,5;
     if (appleRect.y < (screenLimit.height-120)) {
         apple.style.transform=`translateY(${appleRect.y}px)`;  
     } else {
-        apple.style.transform = `translateY(${makeRandomNumber(0,200)}px)`;
-        apple.style.left = `${makeRandomNumber(0,1000)}px`;
+        apple.style.transform = `translateY(${makeRandomNumber(0,50)}px)`;
+        apple.style.left = `${makeRandomNumber(50,screenLimitWidth)}px`;
     }
     collisionDetection(apple)
 };
@@ -106,8 +106,8 @@ function bunnyAttacking (bunny){
     if (bunnyRect.y < (screenLimit.height-195)){
     bunny.style.transform=`translateY(${bunnyRect.y}px)`;
 } else{
-    bunny.style.transform = `translateY(${makeRandomNumber(0,200)}px)`
-    bunny.style.left = `${makeRandomNumber(0,1000)}px`;
+    bunny.style.transform = `translateY(${makeRandomNumber(0,150)}px)`
+    bunny.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
 }
      collisionDetection(bunny)
 };
@@ -134,11 +134,11 @@ if (characterRect.x < objectRect.x + objectRect.width &&
      if(objectRect.width<100){
          theGame.addPoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
-         object.style.left = `${makeRandomNumber(0,1000)}px`;
+         object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
      }else{
          theGame.removePoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
-         object.style.left = `${makeRandomNumber(0,1000)}px`;
+         object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
 
      }
  } printScore()

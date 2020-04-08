@@ -151,45 +151,27 @@ html {
     height: 120px;
     z-index: 2;
     transform: translateY();
-    /* transform: translateX(); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 135px;
+    height: 194px;
 }
 
 .bunny.one{
     background-image: url(./Illustrations/lapin_brun_tombe.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 135px;
-    height: 194px;
-    left: 25%; 
-    top: 0%;  
+    left: 25%;  
 }
 .bunny.two{
     background-image: url(./Illustrations/lapin_gris_tombe.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 135px;
-    height: 194px;
     left: 30%; 
 }
 .bunny.three{
     background-image: url(./Illustrations/lapin_brun_tombe.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 135px;
-    height: 194px;
-    left: 50%; 
+    left: 25%; 
 }
 .bunny.four{
     background-image: url(./Illustrations/lapin_gris_tombe.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 135px;
-    height: 194px;
-    
     left: 60%; 
 }
 
@@ -199,50 +181,39 @@ html {
     transform: translateY();
     /* transform: translateX(); */
     z-index: 10;
+    background-image: url(./Illustrations/pomme.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5em;
+    position: absolute;
+    width: 90px;
+    height: 90px;
 }
 
 .apple.one{
-    background-image: url(./Illustrations/pomme.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 5em;
-    position: absolute;
-    width: 90px;
-    height: 90px;
     left: 15%;
 }
-
 .apple.two{
-    background-image: url(./Illustrations/pomme.png);
-    background-repeat: no-repeat;
-    background-size: 5em;
-    background-position: center;
-    position: absolute;
-    width: 90px;
-    height: 90px;
     left: 30%;
- 
 }
 .apple.three{
-    background-image: url(./Illustrations/pomme.png);
-    background-repeat: no-repeat;
-    background-size: 5em;
-    background-position: center;
-    position: absolute;
-    width: 90px;
-    height: 90px;
     left: 50%; 
 }
 .apple.four{
-    background-image: url(./Illustrations/pomme.png);
-    background-repeat: no-repeat;
-    background-size: 5em;
-    background-position: center;
-    position: absolute;
-    width: 90px;
-    height: 90px;
     left: 75%;
 }
+
+.apple.five{
+    left: 80%;
+}
+.apple.golden{
+    left: 50%;
+    width: 91px;
+    height: 90px;
+}
+
+
+
 .score{
     height: 8vh;  
 }
