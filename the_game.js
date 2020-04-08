@@ -7,6 +7,7 @@ class TheGame {
     }
 
     startGame(callback){
+        this.score=0
         this.intervalID = setInterval(()=>{
             if(this.timeLeft>=1){
             this.timeLeft-=1;
@@ -30,6 +31,6 @@ class TheGame {
 
     resetTime(){
         clearInterval(this.intervalID)
-        theGame.timeLeft=60
+        this.timeLeft=60
     }
 }

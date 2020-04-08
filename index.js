@@ -28,7 +28,7 @@ function play(){
     printTime(); 
     movingCharacter();    
     applesFalling();
-    bunniesAttacking()
+    bunniesAttacking();
 }
 
 
@@ -77,6 +77,7 @@ function movingCharacter (){
 function appleFalling (apple){
     let appleRect = apple.getBoundingClientRect();
     let screenLimit = document.body.getBoundingClientRect();
+    let screenLimitWidth=
     console.log("falling")
     // let screenLimitWidth = screenLimit.height
     appleRect.y = appleRect.y + (makeRandomNumber(2,5));
@@ -84,7 +85,7 @@ function appleFalling (apple){
         apple.style.transform=`translateY(${appleRect.y}px)`;  
     } else {
         apple.style.transform = `translateY(${makeRandomNumber(0,200)}px)`;
-        // apple.style.transform = `translateX(${makeRandomNumber(0,screenLimit.width)}px)`
+        apple.style.left = `${makeRandomNumber(0,1000)}px`;
     }
     collisionDetection(apple)
 };
@@ -106,6 +107,7 @@ function bunnyAttacking (bunny){
     bunny.style.transform=`translateY(${bunnyRect.y}px)`;
 } else{
     bunny.style.transform = `translateY(${makeRandomNumber(0,200)}px)`
+    bunny.style.left = `${makeRandomNumber(0,1000)}px`;
 }
      collisionDetection(bunny)
 };
@@ -132,9 +134,11 @@ if (characterRect.x < objectRect.x + objectRect.width &&
      if(objectRect.width<100){
          theGame.addPoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
+         object.style.left = `${makeRandomNumber(0,1000)}px`;
      }else{
          theGame.removePoint()
-         object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`
+         object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
+         object.style.left = `${makeRandomNumber(0,1000)}px`;
 
      }
  } printScore()
@@ -142,7 +146,8 @@ if (characterRect.x < objectRect.x + objectRect.width &&
 // peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 
 function finishGame(){
-    // clearInterval(theGame.intervalID)
+    window.cancelAnimationFrame(bunniesAttacking);
+    window.cancelAnimationFrame(applesFalling);
     theGame.resetTime();
     background.classList.remove("background-game");
     background.classList.add("background-score");
