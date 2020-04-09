@@ -25,13 +25,22 @@ class TheGame {
         this.score++
     }
 
-    addFivePoints(){
-        this.score+=5
+    addThreePoints(){
+        this.score+=3
     }
 
     removePoint(){
-        this.score = this.score-3
-    }
+    if(this.score>=5){
+    this.score = this.score-5
+    } else if (this.score===4){
+    this.score = this.score-4
+    }else if (this.score===3){
+     this.score = this.score-3
+    }else if (this.score===2){
+     this.score = this.score-2
+    }else if (this.score===1){
+    this.score = this.score-1
+}}
 
     resetTime(){
         clearInterval(this.intervalID)

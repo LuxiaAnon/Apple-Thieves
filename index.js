@@ -1,4 +1,13 @@
 
+// let backgroundMusic = new Howl({
+//     src: ['./audios/title-screen.mp3'],
+//     autoplay:true,
+//     id:1,
+//     muted:true,
+//   });
+
+
+
 const theGame = new TheGame();
 
 //get the elements to display
@@ -39,8 +48,8 @@ function play(){
     movingCharacter();    
     applesFalling();
     bunniesAttacking();
+    backgroundMusic = 0
 }
-
 
 function printTime(){
     time.innerText=`${theGame.timeLeft} sec`
@@ -85,8 +94,6 @@ function movingCharacter (){
     )
 }
 }
-
-
 
 // apples fall
 
@@ -150,19 +157,16 @@ if (characterRect.x < objectRect.x + objectRect.width &&
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
          object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
      }else if(objectRect.width>91 && objectRect.width<100){
-        theGame.addFivePoints()
+        theGame.addThreePoints()
         object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
         object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
-     }
-     else{
+     }else{
          theGame.removePoint()
          object.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
          object.style.left = `${makeRandomNumber(0,screenLimitWidth)}px`;
-
      }
  } printScore()
 }
-// peut etre ajouter un if avec la taille de l'objet qui tombe fonction de la taille remove point ou add point
 
 function finishGame(){
     window.cancelAnimationFrame(req2);
