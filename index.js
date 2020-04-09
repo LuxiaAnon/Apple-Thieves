@@ -1,13 +1,4 @@
 
-// let backgroundMusic = new Howl({
-//     src: ['./audios/title-screen.mp3'],
-//     autoplay:true,
-//     id:1,
-//     muted:true,
-//   });
-
-
-
 const theGame = new TheGame();
 
 //get the elements to display

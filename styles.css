@@ -141,14 +141,18 @@ html {
 #game_info{
  font-size:4rem;
  font-family:'Pacifico';
- position : absolute;
- top: 65%;
- right: 10%;
- background-color: pink;
+ display: flex;
+ line-height: 45px;
+ justify-content: center;
+ /* background-colors: ; */
+ color: black;
  border-radius: 10%;
- width: 30%;
  padding:0 30px;
     }
+
+    /* #transp{
+        color: transparent;
+    } */
     
 .bunny{
     background-position: center;
@@ -223,15 +227,12 @@ html {
 
 
 .score{
-    height: 8vh;  
+    height: 8vh;    
 }
 
-/* #score{
-   
-} */
 
 #time{
-margin-left: 20px;   
+margin-right: 50px;   
 }
 
 
