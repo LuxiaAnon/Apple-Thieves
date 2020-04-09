@@ -25,7 +25,7 @@ html {
     }
 
 .background-home{
-    background-image: url("./Illustrations/home_screen2.png");
+    background-image: url("./Illustrations/home_screen4.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
@@ -227,7 +227,8 @@ html {
 
 
 .score{
-    height: 8vh;    
+    height: 8vh; 
+    
 }
 
 
