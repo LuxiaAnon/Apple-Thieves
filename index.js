@@ -1,3 +1,12 @@
+let backgroundMusic = new Howl({
+    src: ['./audios/title-screen.mp3'],
+    autoplay:true,
+  });
+
+//   {
+//     console.log('Finished!');
+//   });
+
 
 const theGame = new TheGame();
 
@@ -35,11 +44,12 @@ function play(){
     gameMusic.innerHTML=`<audio controls autoplay loop style="display: none">
     <source src="./audios/main-theme.mp3" type="audio/mpeg" >
     </audio>`;
+    document.querySelector("#how").innerHTML=" "
     printTime(); 
     movingCharacter();    
     applesFalling();
     bunniesAttacking();
-    backgroundMusic = 0
+    backgroundMusic.stop()
 }
 
 function printTime(){
@@ -96,7 +106,7 @@ function appleFalling (apple){
     if (appleRect.y < (screenLimit.height-120)) {
         apple.style.transform=`translateY(${appleRect.y}px)`;  
     } else {
-        apple.style.transform = `translateY(${makeRandomNumber(0,50)}px)`;
+        apple.style.transform = `translateY(${makeRandomNumber(0,100)}px)`;
         apple.style.left = `${makeRandomNumber(50,screenLimitWidth)}px`;
     }
     collisionDetection(apple)

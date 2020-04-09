@@ -235,21 +235,22 @@ html {
 margin-right: 50px;   
 }
 
-
-/* .bandit.one{
-    background-image: url(./Illustrations/lapin_brun_fuit.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+/* .eye.one{
     position: absolute;
-    width: 170px;
-    height: 180px;
-    left: 25%;
-    top :73%;
-    animation: 3s linear 1s infinite running flee;
+    background-color: brown;
+    height: 1.5vh;
+    width:1.5vh;
+    border-radius: 50%;
+    left: 55.5%;
+    top:63%
 }
 
-@keyframes flee {
-    from { left: 25%; }to   { left :80%); }
-  } */
-
+.eye.two{
+    position: absolute;
+    background-color: brown;
+    height: 1.5vh;
+    width: 1.5vh;
+    border-radius: 50%;
+    left: 57.8%;
+    top:63%
+} */
