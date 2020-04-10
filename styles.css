@@ -25,7 +25,7 @@ html {
     }
 
 .background-home{
-    background-image: url("./Illustrations/home_screen4.png");
+    background-image: url("./Illustrations/home_screen2.png");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
@@ -131,8 +131,8 @@ html {
     font-size: 2.5rem;
     font-family: 'Pacifico';
     padding: 5px 10px;
-    bottom: 45%;
-    left: 40%;
+    bottom: 35%;
+    left: 43%;
     cursor: pointer;
     position: absolute;
     }
